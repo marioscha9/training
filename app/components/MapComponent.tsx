@@ -14,8 +14,8 @@ import SelectDeleteTool from "./SelectDeleteTool";
 import ZoomComponent from "./CustomZoomButtons";
 import styles from "./ButtonWithImage.module.css";
 import LayerSwitcher from "ol-ext/control/LayerSwitcher";
-import PrintDialogComponent from "./MapWithPrintDialog";
-import PrintComponent from "./MapWithPrintDialog";
+// import PrintDialogComponent from "./MapWithPrintDialog";
+// import PrintComponent from "./MapWithPrintDialog";
 import PrintDialog, { PrintSettings } from "./PrintDIalog";
 import PrintDialogForm from "./PrintDIalog";
 import DrawNoteTool from "./DrawNote";
@@ -83,6 +83,7 @@ const MapComponent: React.FC = () => {
     const intialposition = mapObj.current?.getView().getCenter() ?? [0, 0];
     setPositions([intialposition]);
     setCurrentPositionIndex(0);
+    console.log("marios");
   };
 
   const {
@@ -261,7 +262,7 @@ const MapComponent: React.FC = () => {
           onAreaToolToggle={handleAreaToolToggle}
           activeTool={activeTool}
         />
-        <PrintComponent map={mapObj.current} />
+        {/* <PrintComponent map={mapObj.current} /> */}
       </div>
     </div>
   );

@@ -83,15 +83,15 @@ const useMap = (
         tileSize: 512,
         maxZoom: 20,
       }),
-      visible: false,
-      title: "Satellite",
-      type: "none",
+      // visible: false,
+      // title: "Satellite",
+      // type: "none",
     });
     const osmLayer = new TileLayer({
       source: new OSM(),
-      title: "OpenStreetMap",
-      type: "none",
-      visible: true,
+      // // title: "OpenStreetMap",
+      // type: "none",
+      // visible: true,
     });
 
     const imageLayer = new ImageLayer({
@@ -110,14 +110,14 @@ const useMap = (
     // });
 
     const BaseGroup = new LayerGroup({
-      title: "Base Maps",
+      // title: "Base Maps",
       layers: [osmLayer, imageLayer],
     });
 
     const overlaysGroup = new LayerGroup({
-      title: "Overlays",
-      fold: true,
-      layers: [satelliteLayer, imageLayer],
+      // // title: "Overlays",
+      // fold: true,
+      // layers: [satelliteLayer, imageLayer],
     });
 
     if (mapRef.current) {
@@ -137,8 +137,8 @@ const useMap = (
       mapObj.current.addControl(new LayerSwitcher());
       mapObj.current.addControl(new CanvasAttribution({ canvas: true }));
       const titleControl = new CanvasTitle({
-        title: "",
-        visible: false,
+        // title: "",
+        // visible: false,
       });
 
       // titleControlRef.current = titleControl;
@@ -146,14 +146,14 @@ const useMap = (
       const legend = new Legend({
         title: "Legend",
         margin: 5,
-        items: [
-          {
-            title: "Marios",
-          },
-          {
-            title: "Giorgos",
-          },
-        ],
+        // items: [
+        //   {
+        //     title: "Marios",
+        //   },
+        //   {
+        //     title: "Giorgos",
+        //   },
+        // ],
       });
 
       const legendCtrl = new ControlLegend({ legend });
