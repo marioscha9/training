@@ -1,0 +1,459 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.map-container {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+}
+
+.custom-panel {
+  position: fixed; /* Fixed position to stay in place */
+  top: 10px; /* Distance from the top of the viewport */
+  right: 10px; /* Distance from the left of the viewport */
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 400px; /* Fixed width */
+}
+
+.custom-panel h3 {
+  margin-top: 0;
+}
+
+.custom-panel label {
+  display: block;
+  margin-top: 10px;
+}
+
+.custom-panel input[type="color"] {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.custom-panel input[type="checkbox"] {
+  margin-top: 5px;
+}
+
+.custom-panel input[type="text"] {
+  width: 100%;
+  margin-top: 5px;
+}
+  .ol-swipe, .ol-swipe button {
+    cursor: ew-resize;
+}
+.ol-control-title {
+  height: 2em;
+}
+.ol-control-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.ol-swipe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.ol-swipe.horizontal, .ol-swipe.horizontal button {
+  cursor: ns-resize;
+}
+.ol-swipe.horizontal:before {
+  left: -5000px;
+  right: -5000px;
+  top: 50%;
+  bottom: auto;
+  width: auto;
+  height: 4px;
+}
+  .ol-swipe::before{
+    content: "";
+    position: absolute;
+    top:-5000px;
+    bottom: -5000px;
+    left:50%;
+    width: 4px;
+    background: #fff;
+    z-index: -1;
+    transform: translate(-2px,0);
+    
+  }
+  .ol-swipe button:after {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+}
+
+  .ol-swipe:after, .ol-swipe button:before, .ol-swipe button:after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 50%;
+    width: 2px;
+    background: currentColor;
+    transform: translate(-1px, 0);
+    -webkit-transform: translate(-1px, 0);
+
+  }
+  .ol-control {
+    position: absolute;
+    background-color: var(--ol-subtle-background-color);
+    border-radius: 4px;
+}
+.ol-control.ol-bar {
+  left: 50%;
+  min-height: 1em;
+  min-width: 1em;
+  position: absolute;
+  top: 0.5em;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  white-space: nowrap;
+}
+  .ol-control.ol-bar .ol-control button {
+    margin: 2px 1px;
+    outline: none;
+}
+  .ol-control button {
+    display: block;
+    margin: 1px;
+    padding: 0;
+    color: var(--ol-subtle-foreground-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: inherit;
+    text-align: center;
+    height: 1.375em;
+    width: 1.375em;
+    line-height: .4em;
+    background-color: var(--ol-background-color);
+    border: none;
+    border-radius: 2px;
+}
+.ol-control.ol-bar.ol-left {
+  left: 0.5em;
+  top: 50%;
+  -webkit-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+.custom-print-dialog .ol-print-subtitle-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-print-dialog .ol-print-subtitle-label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.custom-print-dialog .ol-print-subtitle-input {
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ol-control.ol-bar .ol-option-bar .ol-control {
+  display: table-cell;
+}
+.ol-control.ol-bar.ol-left .ol-control {
+  display: block;
+}
+.ol-control.ol-bar .ol-control {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  transform: none;
+  -webkit-transform: none;
+}
+.ol-control {
+  position: absolute;
+  background-color: var(--ol-subtle-background-color);
+  border-radius: 4px;
+}
+.ol-control.ol-bar .ol-toggle.ol-active > button, .ol-control.ol-bar .ol-toggle.ol-active button:hover {
+  background-color: #00AAFF;
+  color: #fff;
+}
+.ol-control.ol-bar .ol-control.ol-active > .ol-option-bar {
+  display: block;
+}
+
+.ol-control.ol-bar .ol-control .ol-bar {
+  display: none;
+}
+.ol-control.ol-bar .ol-control.ol-option-bar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 5px 0;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* border: 1px solid rgba(0, 60, 136, 0.5); */
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 60, 136, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 1px rgba(0, 60, 136, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.ol-control.ol-bar .ol-bar {
+  position: static;
+}
+.ol-control.ol-bar.ol-left .ol-option-bar:before {
+  border-color: transparent rgba(0, 60, 136, 0.5) transparent transparent;
+  bottom: auto;
+  right: 100%;
+  left: auto;
+  top: 0.3em;
+}
+
+.ol-control.ol-bar .ol-option-bar:before {
+  content: "";
+  border: 0.5em solid transparent;
+  border-color: transparent transparent rgba(0, 60, 136, 0.5);
+  position: absolute;
+  bottom: 100%;
+  left: 0.3em;
+  pointer-events: none;
+}
+.ol-control.ol-bar .ol-toggle.ol-active > button, .ol-control.ol-bar .ol-toggle.ol-active button:hover {
+  background-color: #00AAFF;
+  color: #fff;
+}
+.ol-control button:hover, .ol-control button:focus {
+  text-decoration: none;
+  outline: 1px solid var(--ol-subtle-foreground-color);
+  color: var(--ol-foreground-color);
+}
+.ol-swipe button:before {
+  -webkit-transform: translateX(-6px);
+  transform: translateX(-6px);
+}
+.ol-swipe button:after {
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
+}
+
+
+  .ol-viewport, .ol-unselectable{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+  }
+  
+  
+  .control-panel {
+    position: absolute;
+    top: 10px; /* adjust this based on your layout */
+    right: 10px; /* adjust this based on your layout */
+    display: flex;
+    align-items: center;
+  }
+  
+  .reset-zoom-button {
+    margin-left: 10px; /* Spacing between slider and button */
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+  .ol-scale-line {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 2px;
+    border: 1px solid #888; /* Gray border */
+  }
+  /* Add this CSS to your stylesheet */
+/* .ol-swipe .ol-swipebar {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  width: 4px;
+  height: 100%;
+}
+
+.ol-swipe .ol-swipebar:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.2);
+} */
+
+  .mousePosition{
+    position: fixed;
+    top:auto;
+    right:auto;
+    bottom: 5px;
+    left:50%;
+    transform: translateX(-50%);
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+  }
+  #popup {
+    position: absolute;
+   
+  }
+  .myButton{
+    background-color: rgba(22, 85, 167, 0.6);
+    color:white;
+    font-weight: 700;
+    text-align: center;
+    height: 25px;
+    width:25px;
+    border-radius: 2px;
+    border:none;
+    align-items:center;
+  }
+
+  .myButton:hover{
+    background-color: rgb(0,60,136,1);
+  }
+  .myButton.clicked{
+    background-color: rgba(22,170,35,0.8);
+  }
+
+  .myButton.clicked:hover{
+    background-color: rgba(22,170,35,1);
+  }
+
+
+  .navigation-history {
+    margin-top: 10px;
+  }
+  .ol-dragbox{
+    border:2px dashed grey;
+    background-color: rgba(200,200,200,0.6);
+  }
+  .ziButtonDiv{
+    position: relative;
+    display:block;
+    margin:1px auto auto 10px;
+  }
+
+  .zoButtonDiv{
+    position: relative;
+    display:block;
+    margin:1px auto auto 10px;
+  }
+
+  .buttonContainer {
+    position: absolute;
+    top: 50px;
+    left:10px;
+    /* padding: 10px; adjust as needed for spacing from the top and left */
+}
+
+
+
+.ol-tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: default;
+  user-select: none;
+}
+.ol-tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.ol-tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.ol-tooltip-measure:before,
+.ol-tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.ol-tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+
+.hidden {
+  display: none;
+}
+
+.ol-control.ol-print {
+  display: none;
+}
+
+.print-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.print-dialog h2 {
+  margin-top: 0;
+}
+
+.print-dialog label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.print-dialog button {
+  margin-right: 10px;
+}
+/* .ol-control button {
+  display: block;
+  margin: 1px;
+  padding: 0;
+  color: var(--ol-subtle-foreground-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: inherit;
+  text-align: center;
+  height: 1.375em;
+  width: 1.375em;
+  line-height: .4em;
+  background-color: var(--ol-background-color);
+  border: none;
+  border-radius: 2px;
+} */
